@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  nut-exporter:
+    image: hellowoodes/nut-exporter
+    container_name: nut-exporter
+    hostname: nut-exporter
+    restart: unless-stopped
+    command: --log.level=debug
+    ports:
+      - "9199:9199"
+    environment:
+      - NUT_EXPORTER_SERVER=${NUT_EXPORTER_SERVER}
+      - NUT_EXPORTER_USERNAME=${NUT_EXPORTER_USERNAME}
+      - NUT_EXPORTER_PASSWORD=${NUT_EXPORTER_PASSWORD}
+      - NUT_EXPORTER_VARIABLES=battery.charge,battery.charge.low,battery.runtime,battery.type,device.mfr,device.model,device.serial,device.type,driver.name,driver.parameter.pollfreq,driver.parameter.pollinterval,driver.parameter.port,driver.parameter.product,driver.parameter.productid,driver.parameter.serial,driver.parameter.synchronous,driver.parameter.vendor,driver.parameter.vendorid,driver.version,driver.version.data,driver.version.internal,input.transfer.high,input.transfer.low,outlet.1.desc,outlet.1.id,outlet.1.status,outlet.1.switchable,outlet.desc,outlet.id,outlet.switchable,output.frequency.nominal,output.voltage,output.voltage.nominal,ups.beeper.status,ups.delay.shutdown,ups.delay.start,ups.firmware,ups.load,ups.mfr,ups.model,ups.power.nominal,ups.productid,ups.serial,ups.status,ups.timer.shutdown,ups.timer.start,ups.type,ups.vendorid
+    volumes:
+      - "/etc/localtime:/etc/localtime:ro"

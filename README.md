@@ -4,6 +4,7 @@ A [Prometheus](https://prometheus.io) exporter for the Network UPS Tools server.
 
 A sample [dashboard](dashboard/dashboard.json) for Grafana is also available
 ![dashboard](dashboard/capture.png)
+![dashboard](dashboard/capture2.png)
 
 ## Variables and information
 The variables exposed to a NUT client by the NUT system are the lifeblood of a deployment. These variables are consumed by this exporter and coaxed to Prometheus types.
